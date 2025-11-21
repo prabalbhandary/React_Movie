@@ -5,6 +5,7 @@ import express from "express";
 import "colors";
 import morgan from "morgan";
 import cors from "cors";
+import path from "path";
 
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
@@ -12,6 +13,8 @@ import userRoutes from "./routes/userRoutes.js";
 import movieRoutes from "./routes/movieRoutes.js";
 
 const app = express();
+
+const __dirname = path.resolve();
 
 app.use(
   cors({
@@ -29,6 +32,11 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/movies", movieRoutes);
 
 const port = process.env.PORT || 8000;
+
+app.use(express.static(path.join(__dirname, "/client/dist")));
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+});
 
 app.listen(port, () => {
   connectDB();
