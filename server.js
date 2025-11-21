@@ -7,10 +7,10 @@ import morgan from "morgan";
 import cors from "cors";
 import path from "path";
 
-import connectDB from "./config/db.js";
-import authRoutes from "./routes/authRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
-import movieRoutes from "./routes/movieRoutes.js";
+import connectDB from "./server/config/db.js";
+import authRoutes from "./server/routes/authRoutes.js";
+import userRoutes from "./server/routes/userRoutes.js";
+import movieRoutes from "./server/routes/movieRoutes.js";
 
 const app = express();
 
