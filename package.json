@@ -1,0 +1,12 @@
+{
+  "name": "movie",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Prabal Bhandary",
+  "type": "module",
+  "main": "./server/server.js",
+  "scripts": {
+    "start": "npm run start --prefix ./server"
+  }
+}
