@@ -7,6 +7,7 @@
   "type": "module",
   "main": "./server/server.js",
   "scripts": {
+    "build": "npm run build --prefix ./server",
     "start": "npm run start --prefix ./server"
   }
 }
